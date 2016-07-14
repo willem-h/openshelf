@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - .bundle/**/*
+    - Rakefile
+    - bin/*
+    - spec/spec_helper.rb
+    - vendor/bundle/**/*
+
+Style/Documentation:
+  Exclude:
+    - spec/**/*
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - spec/**/*
