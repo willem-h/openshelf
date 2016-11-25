@@ -1,16 +1,19 @@
 version: '2'
 
 services:
+  db:
+    image: postgres
+
   web:
     build: .
     command: 'bash -c ''bin/server'''
+    depends_on:
+      - db
     working_dir: /app/user
     environment:
-      PORT: 8080
+      PORT: 3000
       DATABASE_URL: 'postgres://db:5432/postgres'
     ports:
-      - '8080:8080'
+      - '3000:3000'
     volumes:
       - '.:/app/user'
-  db:
-    image: postgres
