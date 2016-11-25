@@ -9,6 +9,7 @@ gem 'rake'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv'
+  gem 'rspec-rails'
   gem 'rubocop'
   gem 'simplecov'
 end
@@ -16,10 +17,6 @@ end
 group :development do
   gem 'listen'
   gem 'spring'
-end
-
-group :test do
-  gem 'rspec'
 end
 
 group :production do
