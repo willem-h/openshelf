@@ -1,22 +1,21 @@
-# Sample Ruby Project Template
+# Openshelf
+
+Share books with friends.
+
+## Contributing
 
 We want to spend more time building cool stuff and less time configuring
 things. Use this as a starter template for your next Ruby project, ie.
 when you're not using Rails.
 
-## Getting Started
+To setup your local environment use:
 
-Clone this repo
-
-```bash
-git clone https://github.com/cvcnetwork/sample_ruby.git my_awesome_project_name
+```
+bin/setup
 ```
 
-Create a [new repo on GitHub](https://github.com/organizations/cvcnetwork/repositories/new) and then set the URL for the origin branch to this new repo.
+Then to access the [local Openshelf](http://localhost:3000/) at:
 
-```bash
-cd my_awesome_project_name
-git remote set-url origin https://github.com/cvcnetwork/my_awesome_project_name.git
-```
+`bin/go`
 
-Then you're good to start making something amazing.
+I'm always open to pull requests.

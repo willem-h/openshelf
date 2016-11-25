@@ -6,3 +6,8 @@ unset DOCKER_MACHINE_NAME
 unset DOCKER_HOST
 
 docker-compose build
+
+bin/run 'bin/rake db:setup db:migrate'
+bin/run 'RAILS_ENV=test bin/rake db:setup db:migrate'
+
+bin/run 'bin/rails log:clear tmp:clear'
