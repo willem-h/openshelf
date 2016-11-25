@@ -3,16 +3,14 @@ version: '2'
 services:
   db:
     image: postgres
-
   web:
     build: .
-    command: 'bash -c ''bin/server'''
+    command: 'bash -c ''bundle exec puma -C config/puma.rb'''
     depends_on:
       - db
     working_dir: /app/user
     environment:
       PORT: 3000
-      DATABASE_URL: 'postgres://db:5432/postgres'
     ports:
       - '3000:3000'
     volumes:

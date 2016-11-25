@@ -6,3 +6,5 @@ rescue LoadError
 end
 
 Rails.application.load_tasks
+
+task default: %i(spec cucumber)
