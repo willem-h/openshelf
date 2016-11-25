@@ -10,7 +10,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv'
   gem 'rspec-rails'
-  gem 'rubocop'
   gem 'simplecov'
 end
 
