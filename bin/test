@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose run web bundle exec rake
+docker-compose run --rm web /bin/bash -c "RAILS_ENV=test bin/rails default"

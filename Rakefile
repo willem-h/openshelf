@@ -8,5 +8,3 @@ rescue LoadError
 end
 
 Rails.application.load_tasks
-
-task default: %i(rubocop spec)
