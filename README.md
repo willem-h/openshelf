@@ -1,6 +1,6 @@
 # Openshelf
 
-Share books with friends.
+Share books with friends 📖 👫 🎉
 
 ## Contributing
 
