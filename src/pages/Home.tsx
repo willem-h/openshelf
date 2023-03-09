@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import Shelf from './Shelf'
+import Shelf from '../components/Shelf'
 
 function Home() {
   const [loanedBooks, setLoanedBooks] = useState([
