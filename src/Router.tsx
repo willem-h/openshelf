@@ -6,7 +6,14 @@ import {
 import Home from "./pages/Home";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/books/:id",
+    element: <Home />,
+  }
 ])
 
 function Router() {

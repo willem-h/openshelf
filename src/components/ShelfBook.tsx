@@ -1,6 +1,12 @@
-function ShelfBook({ title, author }) {
+import { Link } from "react-router-dom"
+
+function ShelfBook({ shelfId, id, title, author }) {
   return (
-    <li>{ title } by { author }</li>
+    <Link to={`/shelf/${shelfId}/books/${id}`}>
+      <li>
+        { title } by { author }
+      </li>
+    </Link>
   )
 }
 
