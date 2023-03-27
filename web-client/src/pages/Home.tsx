@@ -65,7 +65,7 @@ const initialState = [
 ]
 
 function Home() {
-  const [shelves, setShelves] = useState()
+  const [shelves, setShelves] = useState(initialState)
 
   return (
     <div className="h-screen bg-slate-100">
