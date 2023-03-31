@@ -11,10 +11,10 @@ const client = new Client({
 
 try {
     client.connect()
-    console.log('connected')
+    console.log('Connected to Postgres')
 }
 catch (err) {
-    console.error('connection error', err.stack)
+    console.error('Error connecting to Postgres', err.stack)
 }
 
 export const handler = async (event) => {
@@ -23,7 +23,7 @@ export const handler = async (event) => {
         return result.rows
     }
     catch (err) {
-        console.error('query error', err.stack)
+        console.error('Postgres query error', err.stack)
         return {}
     }
 }
