@@ -30,7 +30,7 @@ function Book() {
     <div className="h-screen bg-slate-100">
       <h1 className="text-2xl">{book.title}</h1>
       <h2>By {book.author}</h2>
-      <Link to={'/'}>Home</Link>
+      <Link to={'/'}>← Home</Link>
     </div>
   )
 }
