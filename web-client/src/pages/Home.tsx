@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const baseURL = 'https://wxt9njnxk9.execute-api.ap-southeast-2.amazonaws.com/dev/'
+const baseURL = 'https://api.openshelf.willemhandreck.com/'
+// const redirectURI = 'https://auth.openshelf.willemhandreck.com/oauth2/authorize?client_id=fctdccmihu7nns0ji0dbggnjk&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fopenshelf.willemhandreck.com'
+const redirectURI = 'https://auth.openshelf.willemhandreck.com/oauth2/authorize?client_id=fctdccmihu7nns0ji0dbggnjk&response_type=token&scope=email+openid+phone&redirect_uri=http%3A%2F%2Flocalhost:5173/auth'
 
 function Home() {
   const [books, setBooks] = useState([])
@@ -23,6 +25,8 @@ function Home() {
 
   return (
     <div className="h-screen bg-slate-100">
+
+      <Link to={redirectURI}>Sign In</Link>
 
       <h1 className="text-2xl">Books</h1>
       <ul className="bg-white">

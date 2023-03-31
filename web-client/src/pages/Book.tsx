@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-const baseURL = 'https://wxt9njnxk9.execute-api.ap-southeast-2.amazonaws.com/dev/'
+const baseURL = 'https://api.openshelf.willemhandreck.com/'
 const initialState = {
   title: 'Loading...',
   author: ''
