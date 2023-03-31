@@ -1,78 +1,41 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import Shelf from '../components/Shelf'
-
-const initialState = [
-  {
-    id: 1,
-    title: "Loaned",
-    books: [
-      {
-        id: 1,
-        title: "The Hobbit",
-        author: "J.R.R. Tolkien",
-      },
-      {
-        id: 2,
-        title: "Mere Christianity",
-        author: "C.S. Lewis",
-      },
-    ]
-  },
-  {
-    id: 2,
-    title: "Borrowed",
-    books: [
-      {
-        id: 3,
-        title: "Silmarilion",
-        author: "J.R.R. Tolkien",
-      },
-    ]
-  },
-  {
-    id: 3,
-    title: "Wanted",
-    books: [
-      {
-        id: 4,
-        title: "1984",
-        author: "George Orwell",
-      },
-    ]
-  },
-  {
-    id: 4,
-    title: "Owned",
-    books: [
-      {
-        id: 5,
-        title: "Pride and Prejudice",
-        author: "Jane Austen",
-      },
-      {
-        id: 6,
-        title: "Harry Potter",
-        author: "J.K. Rowling",
-      },
-      {
-        id: 7,
-        title: "The Martian",
-        author: "Andy Weir",
-      },
-    ]
-  }
-]
+const baseURL = 'https://wxt9njnxk9.execute-api.ap-southeast-2.amazonaws.com/dev/'
 
 function Home() {
-  const [shelves, setShelves] = useState(initialState)
+  const [books, setBooks] = useState([])
+
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch(baseURL + 'books')
+      const data = await response.json()
+      setBooks(data)
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchBooks()
+  }, [])
 
   return (
     <div className="h-screen bg-slate-100">
 
-      {shelves.map(({ id, title, books }) => (
-        <Shelf id={id} name={title} books={books} />
-      ))}
+      <h1 className="text-2xl">Books</h1>
+      <ul className="bg-white">
+        {
+          books.map(({ id, title, author }) => (
+            <Link key={id} to={`/books/${id}`}>
+              <li>
+                { title } by { author }
+              </li>
+            </Link>
+          ))
+        }
+      </ul>
 
     </div>
   )
