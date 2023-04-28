@@ -36,3 +36,8 @@ GET /users/1/owns/1
 
 
 /users/1/wants/1
+
+
+AWS API Gateway
+
+GET /books https://wxt9njnxk9.execute-api.ap-southeast-2.amazonaws.com/dev
